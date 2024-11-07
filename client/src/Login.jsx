@@ -4,16 +4,21 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Login(){
 
-    const [name,setName]=useState()
     const [email,SetEmail]=useState()
     const [password,setPassword]=useState()
-    const navigate=useNavigate
+    const navigate=useNavigate()
     
     const handleSubmit =(e)=>{
         e.preventDefault()
-        axios.post("http://localhost:3001/register",{name,email,password})
-        .then(result=>{console.log(result)
-        navigate("/login")
+        axios.post("http://localhost:3001/login",{email,password})
+        .then(result=>{
+            console.log(result)
+            if(result.data==="sucess"){
+                navigate("/home")
+            }else{
+                navigate("/register")
+                alert("you are not Registerd to this service")
+            }
         })
         .catch(err=>console.log(err))
     }
@@ -21,7 +26,7 @@ export default function Login(){
     return(
         <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
             <div className="bg-white p-3 rounded w-25">
-                <h2><center>Sign Up</center></h2>
+                <h2><center>Login</center></h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="email">
