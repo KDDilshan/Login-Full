@@ -7,7 +7,7 @@ const app=expres()
 app.use(expres.json())
 app.use(cors())
 
-mongoose.connect("mongodb+srv://kdprojects847:KDdJKOyXQAdD6Kxd@cluster1.7jyzc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1")
+mongoose.connect("mongodb+srv://kdprojects847:<password>@cluster1.7jyzc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1")
 
 app.post("/login",(req,res)=>{
     const {email,password}=req.body
