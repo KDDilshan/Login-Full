@@ -22,6 +22,20 @@ export default function signUp(){
         <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
             <div className="bg-white p-3 rounded w-25">
                 <h2><center>Sign Up</center></h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <label htmlFor="email">
+                            <strong>Email</strong>
+                        </label>
+                        <input type="text"
+                        placeholder='Enter Email'
+                        autoComplete='off'
+                        name='email'
+                        className='form-control rounded-0'
+                        onChange={(e)=> SetEmail(e.target.value)}/>
+                    </div>
+                    
+                </form>
             </div>
 
         </div>
