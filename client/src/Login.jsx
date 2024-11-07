@@ -13,7 +13,7 @@ export default function Login(){
         axios.post("http://localhost:3001/login",{email,password})
         .then(result=>{
             console.log(result)
-            if(result.data==="sucess"){
+            if(result.data==="Success"){
                 navigate("/home")
             }else{
                 navigate("/register")
